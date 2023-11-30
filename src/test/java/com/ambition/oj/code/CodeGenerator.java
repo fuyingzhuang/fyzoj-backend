@@ -47,7 +47,7 @@ public class CodeGenerator {
         mpg.setGlobalConfig(gc);
 //2、设置数据源
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/bi?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/oj?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("w1VJ6kR4");
@@ -55,8 +55,8 @@ public class CodeGenerator {
         mpg.setDataSource(dsc);
 //3、包的配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("bi"); // 模块名
-        pc.setParent("com.ambition2");
+        pc.setModuleName("oj"); // 模块名
+        pc.setParent("com.ambition");
         pc.setEntity("model.entity");
         pc.setMapper("mapper");
         pc.setService("service");
@@ -64,7 +64,7 @@ public class CodeGenerator {
         mpg.setPackageInfo(pc);
 //4、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("user", "chart"); // 设置要映射的表名
+        strategy.setInclude("question_submit", "question"); // 设置要映射的表名
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityLombokModel(true); // 自动lombok；

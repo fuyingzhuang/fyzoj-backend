@@ -2,7 +2,9 @@ package com.ambition.oj.controller;
 
 import com.ambition.oj.common.BaseResponse;
 import com.ambition.oj.common.ResultUtils;
+import com.ambition.oj.model.entity.User;
 import com.ambition.oj.service.OssService;
+import com.ambition.oj.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -23,13 +25,15 @@ public class OssController {
     @Resource
     private OssService ossService;
 
+    @Resource
+    private UserService userService;
 
     /**
      * 上传头像的方法
      */
     @PostMapping("/upload")
     public BaseResponse<String> uploadFile(@RequestPart("file") MultipartFile multipartFile, HttpServletRequest request) {
-
+//        User loginUser = userService.getLoginUser(request);
 //        获取上传文件 MultipartFile  返回上传文件的oss路径
         String url = ossService.uploadFileAvatar(multipartFile);
         System.out.println(url);
