@@ -2,7 +2,6 @@ package com.ambition.oj.controller;
 
 import com.ambition.oj.common.BaseResponse;
 import com.ambition.oj.common.ResultUtils;
-import com.ambition.oj.model.dto.file.UploadFileRequest;
 import com.ambition.oj.service.OssService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
