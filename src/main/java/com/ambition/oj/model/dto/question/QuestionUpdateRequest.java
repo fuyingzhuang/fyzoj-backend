@@ -3,6 +3,7 @@ package com.ambition.oj.model.dto.question;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author Ambition
