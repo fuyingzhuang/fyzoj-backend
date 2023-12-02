@@ -257,7 +257,7 @@ public class UserController {
     public BaseResponse<Page<User>> listUserByPage(@RequestBody UserQueryRequest userQueryRequest,
                                                    HttpServletRequest request) {
         long current = userQueryRequest.getCurrent();
-        long size = userQueryRequest.getPageSize();
+        long size = userQueryRequest.getSize();
         Page<User> userPage = userService.page(new Page<>(current, size),
                 userService.getQueryWrapper(userQueryRequest));
         return ResultUtils.success(userPage);
@@ -277,7 +277,7 @@ public class UserController {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         long current = userQueryRequest.getCurrent();
-        long size = userQueryRequest.getPageSize();
+        long size = userQueryRequest.getSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<User> userPage = userService.page(new Page<>(current, size),

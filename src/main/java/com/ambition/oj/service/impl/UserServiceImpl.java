@@ -273,4 +273,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 sortField);
         return queryWrapper;
     }
+
+    /**
+     * 校验用户是否为管理员
+     *
+     * @param loginUser 当前登录用户
+     */
+    @Override
+    public void validAdmin(User loginUser) {
+        if (!isAdmin(loginUser)) {
+            throw new BusinessException(ErrorCode.FORBIDDEN_ERROR, "无权限");
+        }
+
+    }
 }

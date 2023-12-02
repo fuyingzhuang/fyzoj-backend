@@ -2,14 +2,10 @@ package com.ambition.oj.model.dto.question;
 
 
 import com.ambition.oj.common.PageRequest;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 
@@ -41,10 +37,6 @@ public class QuestionQueryRequest extends PageRequest implements Serializable {
      */
     private List<String> tags;
 
-    /**
-     * 题目答案
-     */
-    private String answer;
 
     /**
      * 创建用户 id

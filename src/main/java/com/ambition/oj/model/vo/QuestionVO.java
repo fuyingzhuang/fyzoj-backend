@@ -86,8 +86,8 @@ public class QuestionVO implements Serializable {
     /**
      * 包装类转对象
      *
-     * @param questionVO
-     * @return
+     * @param questionVO 包装类
+     * @return 对象
      */
     public static Question voToObj(QuestionVO questionVO) {
         if (questionVO == null) {

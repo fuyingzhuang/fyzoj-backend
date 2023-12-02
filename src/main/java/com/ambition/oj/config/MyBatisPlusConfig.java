@@ -28,4 +28,13 @@ public class MyBatisPlusConfig {
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
     }
+
+    /**
+     *  自动填充时间
+     */
+    @Bean
+    public MyMetaObjectHandler myMetaObjectHandler() {
+        return new MyMetaObjectHandler();
+    }
+
 }

@@ -162,7 +162,7 @@ public class PostController {
     public BaseResponse<Page<PostVO>> listPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
                                                        HttpServletRequest request) {
         long current = postQueryRequest.getCurrent();
-        long size = postQueryRequest.getPageSize();
+        long size = postQueryRequest.getSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.page(new Page<>(current, size),
@@ -186,7 +186,7 @@ public class PostController {
         User loginUser = userService.getLoginUser(request);
         postQueryRequest.setUserId(loginUser.getId());
         long current = postQueryRequest.getCurrent();
-        long size = postQueryRequest.getPageSize();
+        long size = postQueryRequest.getSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.page(new Page<>(current, size),
@@ -205,7 +205,7 @@ public class PostController {
     @PostMapping("/search/page/vo")
     public BaseResponse<Page<PostVO>> searchPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
                                                          HttpServletRequest request) {
-        long size = postQueryRequest.getPageSize();
+        long size = postQueryRequest.getSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.searchFromEs(postQueryRequest);

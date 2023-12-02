@@ -146,7 +146,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Long userId = postQueryRequest.getUserId();
         // es 起始页为 0
         long current = postQueryRequest.getCurrent() - 1;
-        long pageSize = postQueryRequest.getPageSize();
+        long pageSize = postQueryRequest.getSize();
         String sortField = postQueryRequest.getSortField();
         String sortOrder = postQueryRequest.getSortOrder();
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
