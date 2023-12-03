@@ -47,6 +47,9 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
 //        将judgeConfig转换为json字符串 用于存储到数据库中
         String judgeConfigStr = gson.toJson(judgeConfig);
         question.setJudgeConfig(judgeConfigStr);
+//        将tags转换为json字符串 用于存储到数据库中
+        String tagsStr = gson.toJson(questionAddRequest.getTags());
+        question.setTags(tagsStr);
 //        将question插入到数据库中
         return baseMapper.insert(question);
     }
@@ -72,6 +75,7 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
         String judgeConfigStr = gson.toJson(judgeConfig);
         question.setJudgeConfig(judgeConfigStr);
 //        将question更新到数据库中
+
         return baseMapper.updateById(question);
     }
 
@@ -120,10 +124,10 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
         long pageSize = questionQueryRequest.getSize();
 //        使用list查询
         Page<Question> questionPage = baseMapper.selectPage(new Page<>(current, pageSize), questionQueryWrapper);
-        for (Question record : questionPage.getRecords()) {
-//          将answerCount设置为null 过滤掉answer
-            record.setAnswer(null);
-        }
+//        for (Question record : questionPage.getRecords()) {
+////          将answerCount设置为null 过滤掉answer
+//            record.setAnswer(null);
+//        }
         return questionPage;
     }
 

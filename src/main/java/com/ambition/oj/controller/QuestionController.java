@@ -15,11 +15,7 @@ import com.ambition.oj.model.vo.QuestionVO;
 import com.ambition.oj.service.QuestionService;
 import com.ambition.oj.service.UserService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -128,6 +124,12 @@ public class QuestionController {
         return ResultUtils.success(questionVOPage);
     }
 
+
+    @GetMapping("/get/{id}")
+    public BaseResponse<Question> getQuestion(@PathVariable Long id) {
+        Question question = questionService.getById(id);
+        return ResultUtils.success(question);
+    }
 
 }
 

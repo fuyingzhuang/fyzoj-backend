@@ -36,6 +36,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     public void updateFill(MetaObject metaObject) {
         log.info("start update fill.....");
         this.setFieldValByName("createTime", new Date(), metaObject);
-        metaObject.setValue("updateTime", BaseContext.getCurrentId());
+        this.setFieldValByName("updateTime", new Date(), metaObject);
     }
 }
