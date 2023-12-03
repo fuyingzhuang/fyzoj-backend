@@ -86,11 +86,5 @@ cos:
     bucket: xxx
 
 # 阿里云oss图片上传
-aliyun:
-  oss:
-    file:
-      endpoint: oss-cn-hangzhou.aliyuncs.com
-      accessKeyId: LTAI5tNU1Ny8NKYWyXpp2k2j
-      accessKeySecret: 4zvGW3TqBcjmYZe0M7pJXOYiNwx6dq
-      bucketName: edu-ambition
+
 
