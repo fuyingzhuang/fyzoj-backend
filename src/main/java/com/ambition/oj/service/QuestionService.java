@@ -5,6 +5,7 @@ import com.ambition.oj.model.dto.question.QuestionEditRequest;
 import com.ambition.oj.model.dto.question.QuestionQueryRequest;
 import com.ambition.oj.model.entity.Question;
 import com.ambition.oj.model.vo.QuestionVO;
+import com.ambition.oj.model.vo.UserBrowseQuestionVO;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -26,4 +27,5 @@ public interface QuestionService extends IService<Question> {
 
     Page<Question> listQuestion(QuestionQueryRequest questionQueryRequest);
 
+    Page<UserBrowseQuestionVO> listQuestionByUser(QuestionQueryRequest questionQueryRequest);
 }

@@ -4,14 +4,17 @@ import com.ambition.oj.model.dto.question.*;
 import com.ambition.oj.model.entity.Question;
 import com.ambition.oj.mapper.QuestionMapper;
 import com.ambition.oj.model.vo.QuestionVO;
+import com.ambition.oj.model.vo.UserBrowseQuestionVO;
 import com.ambition.oj.service.QuestionService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -129,6 +132,56 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
 //            record.setAnswer(null);
 //        }
         return questionPage;
+    }
+
+    @Override
+    public Page<UserBrowseQuestionVO> listQuestionByUser(QuestionQueryRequest questionQueryRequest) {
+//        构建一个查询条件
+        QueryWrapper<Question> questionQueryWrapper = new QueryWrapper<>();
+//        如果题目标题不为空 则添加题目标题的查询条件
+        String title = questionQueryRequest.getTitle();
+        if (title != null && !title.isEmpty()) {
+            questionQueryWrapper.like("title", title);
+        }
+//        如果内容不为空 则添加内容的查询条件
+        String content = questionQueryRequest.getContent();
+        if (content != null && !content.isEmpty()) {
+            questionQueryWrapper.eq("content", content);
+        }
+        List<String> tags = questionQueryRequest.getTags();
+//        判断标签是否为空
+        if (tags != null && !tags.isEmpty()) {
+            // 如果标签不为空，则添加标签的OR查询条件
+            questionQueryWrapper.and(wrapper -> {
+                for (int i = 0; i < tags.size(); i++) {
+                    String tag = tags.get(i);
+                    if (i == 0) {
+                        wrapper.like("tags", tag);
+                    } else {
+                        wrapper.or().like("tags", tag);
+                    }
+                }
+            });
+        }
+//        获取当前的页数和每页的大小
+        long current = questionQueryRequest.getCurrent();
+        long pageSize = questionQueryRequest.getSize();
+//        使用list查询
+        Page<Question> questionPage = baseMapper.selectPage(new Page<>(current, pageSize), questionQueryWrapper);
+        Page<UserBrowseQuestionVO> userBrowseQuestionVOPage = new Page<>();
+        BeanUtils.copyProperties(questionPage, userBrowseQuestionVOPage);
+        List<UserBrowseQuestionVO> userBrowseQuestionVOS = new ArrayList<>();
+        for (Question question : questionPage.getRecords()) {
+            UserBrowseQuestionVO userBrowseQuestionVO = new UserBrowseQuestionVO();
+            BeanUtils.copyProperties(question, userBrowseQuestionVO);
+//            将tags转换为list
+            List<String> tagsList = gson.fromJson(question.getTags(), new TypeToken<List<String>>() {
+            }.getType());
+            userBrowseQuestionVO.setTags(tagsList);
+            userBrowseQuestionVOS.add(userBrowseQuestionVO);
+        }
+        userBrowseQuestionVOPage.setRecords(userBrowseQuestionVOS);
+        return userBrowseQuestionVOPage;
     }
 
 

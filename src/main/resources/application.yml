@@ -88,3 +88,6 @@ cos:
 # 阿里云oss图片上传
 
 
+
+codesandbox:
+  type: remote

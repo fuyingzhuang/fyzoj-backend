@@ -1,7 +1,10 @@
 package com.ambition.oj.mapper;
 
 import com.ambition.oj.model.entity.Question;
+import com.ambition.oj.model.vo.UserBrowseQuestionVO;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 /**
  * <p>

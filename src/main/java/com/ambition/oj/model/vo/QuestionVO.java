@@ -2,6 +2,7 @@ package com.ambition.oj.model.vo;
 
 
 import cn.hutool.json.JSONUtil;
+import com.ambition.oj.model.dto.question.JudgeCase;
 import com.ambition.oj.model.dto.question.JudgeConfig;
 import com.ambition.oj.model.entity.Question;
 import lombok.Data;

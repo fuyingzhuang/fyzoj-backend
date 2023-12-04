@@ -5,20 +5,25 @@ import com.ambition.oj.common.BaseResponse;
 import com.ambition.oj.common.DeleteRequest;
 import com.ambition.oj.common.ErrorCode;
 import com.ambition.oj.common.ResultUtils;
-import com.ambition.oj.model.dto.question.QuestionAddRequest;
-import com.ambition.oj.model.dto.question.QuestionEditRequest;
-import com.ambition.oj.model.dto.question.QuestionQueryRequest;
+import com.ambition.oj.model.dto.question.*;
 import com.ambition.oj.model.entity.Post;
 import com.ambition.oj.model.entity.Question;
 import com.ambition.oj.model.entity.User;
 import com.ambition.oj.model.vo.QuestionVO;
+import com.ambition.oj.model.vo.UserBrowseQuestionVO;
 import com.ambition.oj.service.QuestionService;
 import com.ambition.oj.service.UserService;
+import com.ambition.oj.utils.GsonUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <p>
@@ -119,16 +124,49 @@ public class QuestionController {
      * @return 查询结果
      */
     @PostMapping("/list")
-    public BaseResponse<Page<Question>> listByAdmin(@RequestBody QuestionQueryRequest questionQueryRequest) {
+    public BaseResponse<Page<Question>> listByAdmin(@RequestBody QuestionQueryRequest questionQueryRequest, HttpServletRequest request) {
+        //        获取当前登陆的用户
+        User loginUser = userService.getLoginUser(request);
+//        验证用户是否是管理员
+        userService.validAdmin(loginUser);
         Page<Question> questionVOPage = questionService.listQuestion(questionQueryRequest);
         return ResultUtils.success(questionVOPage);
     }
 
 
     @GetMapping("/get/{id}")
-    public BaseResponse<Question> getQuestion(@PathVariable Long id) {
+    public BaseResponse<Question> getQuestion(@PathVariable Long id, HttpServletRequest request) {
+        //        获取当前登陆的用户
+        User loginUser = userService.getLoginUser(request);
         Question question = questionService.getById(id);
         return ResultUtils.success(question);
+    }
+
+
+    @PostMapping("/list/browse")
+    public BaseResponse<Page<UserBrowseQuestionVO>> listByUser(@RequestBody QuestionQueryRequest questionQueryRequest) {
+        Page<UserBrowseQuestionVO> questionVOPage = questionService.listQuestionByUser(questionQueryRequest);
+        return ResultUtils.success(questionVOPage);
+    }
+
+
+    @GetMapping("/get/do/question/{id}")
+    public BaseResponse<QuestionVO> getDoQuestionInfo(@PathVariable Long id, HttpServletRequest request) {
+        //        获取当前登陆的用户
+        User loginUser = userService.getLoginUser(request);
+        Question question = questionService.getById(id);
+        QuestionVO questionVO = new QuestionVO();
+//        将question中的tags字符串转成questionVO中的tags List数组
+        String[] tags = question.getTags().split(",");
+        questionVO.setTags(Arrays.asList(tags));
+        // 将question中的judgeConfig字符串转成JSON对象 并赋值给questionVO中的judgeConfig
+        String judgeConfigStr = question.getJudgeConfig();
+//        将judgeConfigStr转成JudgeConfig对象 使用Gson
+        Gson gson = GsonUtils.getGson();
+        questionVO.setJudgeConfig(gson.fromJson(judgeConfigStr, JudgeConfig.class));
+
+        BeanUtils.copyProperties(question, questionVO);
+        return ResultUtils.success(questionVO);
     }
 
 }
