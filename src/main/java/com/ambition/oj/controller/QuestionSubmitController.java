@@ -6,9 +6,13 @@ import com.ambition.oj.common.BaseResponse;
 import com.ambition.oj.common.ErrorCode;
 import com.ambition.oj.common.ResultUtils;
 import com.ambition.oj.model.dto.questionsubmit.QuestionSubmitAddRequest;
+import com.ambition.oj.model.dto.questionsubmit.QuestionSubmitSearchRequest;
+import com.ambition.oj.model.entity.QuestionSubmit;
 import com.ambition.oj.model.entity.User;
 import com.ambition.oj.service.QuestionSubmitService;
 import com.ambition.oj.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,6 +58,8 @@ public class QuestionSubmitController {
 //        获取当前的用户id
         Long id = loginUser.getId();
         questionSubmitAddRequest.setUserId(id);
+        // 获取题目的id
+        Long questionId = questionSubmitAddRequest.getQuestionId();
 //        调用service层的方法
         Integer result = questionSubmitService.addQuestionSubmit(questionSubmitAddRequest);
         if (result == 0) {
@@ -65,20 +71,33 @@ public class QuestionSubmitController {
 
 
     @PostMapping("/list")
-    public BaseResponse listQuestionSubmit(@RequestBody QuestionSubmitAddRequest questionSubmitAddRequest,
+    public BaseResponse listQuestionSubmit(@RequestBody QuestionSubmitSearchRequest questionSubmitSearchRequest,
                                            HttpServletRequest request) {
 //      判断当前用户是否登陆
         User loginUser = userService.getLoginUser(request);
-//        获取当前的用户id
-        Long id = loginUser.getId();
-        questionSubmitAddRequest.setUserId(id);
-//        调用service层的方法
-        Integer result = questionSubmitService.addQuestionSubmit(questionSubmitAddRequest);
-        if (result == 0) {
-            return ResultUtils.error(ErrorCode.SYSTEM_ERROR, "提交失败");
-        } else {
-            return ResultUtils.success("提交成功");
-        }
+        QueryWrapper<QuestionSubmit> questionSubmitQueryWrapper = new QueryWrapper<>();
+//        获取当前用户提交的语言
+//        String language = questionSubmitSearchRequest.getLanguage();
+//        if (language != null || !"".equals(language)) {
+//            questionSubmitQueryWrapper.eq("language", language);
+//        }
+//        // 获取题目的id 可以根据题目查询
+//
+//        Long questionId = questionSubmitSearchRequest.getQuestionId();
+//        if (questionId != null || questionId != 0) {
+//            questionSubmitQueryWrapper.eq("questionId", questionId);
+//        }
+//        // 获取用户的id
+//        Long userId = questionSubmitSearchRequest.getUserId();
+//        if (userId != null || userId != 0) {
+//            questionSubmitQueryWrapper.eq("userId", userId);
+//        }
+//        分页查询
+        long size = questionSubmitSearchRequest.getSize();
+        long current = questionSubmitSearchRequest.getCurrent();
+        Page<QuestionSubmit> page = questionSubmitService.page(new Page<>(current, size), questionSubmitQueryWrapper);
+        return ResultUtils.success(page);
+//
 
     }
 

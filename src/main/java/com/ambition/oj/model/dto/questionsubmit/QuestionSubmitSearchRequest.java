@@ -1,6 +1,9 @@
 package com.ambition.oj.model.dto.questionsubmit;
 
+import com.ambition.oj.common.PageRequest;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @author Ambition
@@ -8,7 +11,7 @@ import lombok.Data;
  * @desc 提交题目编辑请求
  */
 @Data
-public class QuestionSubmitSearchRequest {
+public class QuestionSubmitSearchRequest  extends PageRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
