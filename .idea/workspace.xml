@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07000387-6b71-4a92-aaab-8e8f048bac73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/codesanbox/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/codesanbox/TestRemoteSandbox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/QuestionSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/QuestionSubmitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/RemoteCodeSandbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/RemoteCodeSandbox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/questionsubmit/QuestionSubmitSearchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/questionsubmit/QuestionSubmitSearchRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/impl/QuestionSubmitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/impl/QuestionSubmitServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="07000387-6b71-4a92-aaab-8e8f048bac73" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,7 +225,7 @@
       <workItem from="1701787878436" duration="754000" />
       <workItem from="1701868610863" duration="1799000" />
       <workItem from="1701938676652" duration="61000" />
-      <workItem from="1702191370514" duration="11075000" />
+      <workItem from="1702191370514" duration="11139000" />
     </task>
     <task id="LOCAL-00001" summary="1. 整理阿里云oss图片上传">
       <created>1701337437713</created>
@@ -320,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702203946497</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1. 成功调试远程调用代码沙箱的功能">
+      <created>1702224341477</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702224341477</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +345,8 @@
     <MESSAGE value="1. 编写模拟沙箱的代码&#10;2. 学习代理模式&#10;3. 学习策略模式" />
     <MESSAGE value="1. 项目瘦身 删除无用的代码" />
     <MESSAGE value="1. 去掉一些相关的测试用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 去掉一些相关的测试用例" />
+    <MESSAGE value="1. 成功调试远程调用代码沙箱的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 成功调试远程调用代码沙箱的功能" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
