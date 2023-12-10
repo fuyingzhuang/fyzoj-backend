@@ -7,6 +7,7 @@ import com.ambition.oj.judge.codesanbox.model.JudgeInfo;
 import com.ambition.oj.model.enums.JudgeInfoMessageEnum;
 import com.ambition.oj.model.enums.QuestionSubmitStatusEnum;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * 代码沙箱 示例
  */
 @Slf4j
+//@Service
 public class ExampleCodeSandbox implements CodeSandbox {
     @Override
     public ExecuteCodeResponse executeCode(ExecuteCodeRequest executeCodeRequest) {

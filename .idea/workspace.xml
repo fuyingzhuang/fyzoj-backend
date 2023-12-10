@@ -4,11 +4,75 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07000387-6b71-4a92-aaab-8e8f048bac73" name="Changes" comment="" />
+    <list default="true" id="07000387-6b71-4a92-aaab-8e8f048bac73" name="Changes" comment="1. 编写模拟沙箱的代码&#10;2. 学习代理模式&#10;3. 学习策略模式">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/restkit/RESTKit_CommonSetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/PostFavourController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/PostThumbController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/QuestionSubmitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/controller/QuestionSubmitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/esdao/PostEsDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/job/cycle/IncSyncPostToEs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/job/cycle/IncSyncPostToEs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/job/once/FullSyncPostToEs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/job/once/FullSyncPostToEs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/JudgeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/JudgeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/ExampleCodeSandbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/ExampleCodeSandbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/RemoteCodeSandbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/RemoteCodeSandbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/ThirdPartyCodeSandbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/judge/codesanbox/Impl/ThirdPartyCodeSandbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/mapper/PostFavourMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/mapper/PostMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/mapper/PostThumbMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/mapper/xml/QuestionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/mapper/xml/QuestionSubmitMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/QuestionSubmitMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/post/PostAddRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/post/PostEditRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/post/PostEsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/post/PostQueryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/post/PostUpdateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/postfavour/PostFavourAddRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/postfavour/PostFavourQueryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/dto/postthumb/PostThumbAddRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/entity/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/entity/PostFavour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/entity/PostThumb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/vo/PostVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ambition/oj/model/vo/PostVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/PostFavourService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/PostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/PostThumbService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/impl/PostFavourServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/impl/PostServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ambition/oj/service/impl/PostThumbServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PostFavourMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PostThumbMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ambition/oj/esdao/PostEsDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/esdao/PostEsDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ambition/oj/mapper/PostFavourMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/mapper/PostFavourMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ambition/oj/mapper/PostMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/mapper/PostMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ambition/oj/service/PostFavourServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/service/PostFavourServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ambition/oj/service/PostServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ambition/oj/service/PostServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -21,39 +85,139 @@
     </option>
   </component>
   <component name="ProjectId" id="2Y4zfpQr3KwygEe4LE1iwYQ5JG0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RESTKit.sync.cert.Ide": "true",
-    "RESTKit.sync.env.Ide": "true",
-    "RESTKit.sync.requestConfig.Ide": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/fuyingzhuang/IdeaProjects/backend-init/src/test/java/com/ambition/homepage",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.4172662",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "ba3988db0a3167093b1f74e8ae4a8e83",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RESTKit.sync.cert.Ide&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.env.Ide&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.requestConfig.Ide&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fuyingzhuang/IdeaProjects/backend-init/src/test/java/com/ambition/homepage&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4172662&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7a3420d9dcf928e945b2ae4f08fc13ea&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ambition.oj.judge" />
+      <recent name="com.ambition.oj.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/com/ambition/homepage" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ambition.oj.model.dto.questionsubmit" />
+      <recent name="com.ambition.oj.service.impl" />
+      <recent name="com.ambition.oj.service" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MainApplication (1)">
+    <configuration name="CodeGenerator.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fyzoj-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ambition.oj.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ambition.oj.code" />
+      <option name="MAIN_CLASS_NAME" value="com.ambition.oj.code.CodeGenerator" />
+      <option name="METHOD_NAME" value="run" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeSanBoxTest.executeCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fyzoj-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ambition.oj.codesanbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ambition.oj.codesanbox" />
+      <option name="MAIN_CLASS_NAME" value="com.ambition.oj.codesanbox.CodeSanBoxTest" />
+      <option name="METHOD_NAME" value="executeCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeSanBoxTest.executeCodeFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fyzoj-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ambition.oj.codesanbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ambition.oj.codesanbox" />
+      <option name="MAIN_CLASS_NAME" value="com.ambition.oj.codesanbox.CodeSanBoxTest" />
+      <option name="METHOD_NAME" value="executeCodeFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeSanBoxTest.executeCodeFactoryByConfig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fyzoj-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ambition.oj.codesanbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ambition.oj.codesanbox" />
+      <option name="MAIN_CLASS_NAME" value="com.ambition.oj.codesanbox.CodeSanBoxTest" />
+      <option name="METHOD_NAME" value="executeCodeFactoryByConfig" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeSanBoxTest.executeCodeFactoryByProxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fyzoj-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ambition.oj.codesanbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ambition.oj.codesanbox" />
+      <option name="MAIN_CLASS_NAME" value="com.ambition.oj.codesanbox.CodeSanBoxTest" />
+      <option name="METHOD_NAME" value="executeCodeFactoryByProxy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="backend-init" />
       <method v="2">
@@ -81,6 +245,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CodeSanBoxTest.executeCodeFactoryByProxy" />
+        <item itemvalue="JUnit.CodeSanBoxTest.executeCodeFactoryByConfig" />
+        <item itemvalue="JUnit.CodeSanBoxTest.executeCodeFactory" />
+        <item itemvalue="JUnit.CodeSanBoxTest.executeCode" />
+        <item itemvalue="JUnit.CodeGenerator.run" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -92,11 +265,122 @@
       <updated>1699799745686</updated>
       <workItem from="1699799746870" duration="62000" />
       <workItem from="1699942594012" duration="14000" />
-      <workItem from="1701267614703" duration="1025000" />
+      <workItem from="1701267614703" duration="1661000" />
+      <workItem from="1701322153543" duration="2546000" />
+      <workItem from="1701336146640" duration="9331000" />
+      <workItem from="1701398860668" duration="18321000" />
+      <workItem from="1701526542222" duration="14468000" />
+      <workItem from="1701681249724" duration="53000" />
+      <workItem from="1701698357592" duration="8718000" />
+      <workItem from="1701767465165" duration="25000" />
+      <workItem from="1701780022470" duration="2603000" />
+      <workItem from="1701787878436" duration="754000" />
+      <workItem from="1701868610863" duration="1799000" />
+      <workItem from="1701938676652" duration="61000" />
+      <workItem from="1702191370514" duration="2289000" />
     </task>
+    <task id="LOCAL-00001" summary="1. 整理阿里云oss图片上传">
+      <created>1701337437713</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701337437713</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1. 整合阿里云oss图片上传">
+      <created>1701344918098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701344918098</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1. 整合阿里云oss图片上传">
+      <created>1701345596395</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701345596395</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1. 创建mysql数据表和相关的实体&#10;2. 封装相关的VO和DTO">
+      <created>1701358066145</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701358066145</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1. 封装相关的VO和DTO">
+      <created>1701406552525</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701406552525</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1. 创建mysql数据表和相关的实体&#10;2. 封装相关的VO和DTO">
+      <created>1701406650426</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701406650426</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1. 创建mysql数据表和相关的实体&#10;2. 封装相关的VO和DTO">
+      <created>1701495129796</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701495129796</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1. 封装了一些基本的VO">
+      <created>1701619397589</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701619397589</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1. 隐藏阿里云信息">
+      <created>1701620225989</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701620225989</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1. 编写模拟沙箱的代码&#10;2. 学习代理模式&#10;3. 学习策略模式">
+      <created>1701706085921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701706085921</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1. 整理阿里云oss图片上传" />
+    <MESSAGE value="1. 整合阿里云oss图片上传" />
+    <MESSAGE value="1. 封装相关的VO和DTO" />
+    <MESSAGE value="1. 创建mysql数据表和相关的实体&#10;2. 封装相关的VO和DTO" />
+    <MESSAGE value="1. 封装了一些基本的VO" />
+    <MESSAGE value="1. 隐藏阿里云信息" />
+    <MESSAGE value="1. 编写模拟沙箱的代码&#10;2. 学习代理模式&#10;3. 学习策略模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 编写模拟沙箱的代码&#10;2. 学习代理模式&#10;3. 学习策略模式" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

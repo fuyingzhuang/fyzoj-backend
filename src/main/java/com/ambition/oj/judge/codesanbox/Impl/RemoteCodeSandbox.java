@@ -8,12 +8,14 @@ import com.ambition.oj.judge.codesanbox.CodeSandbox;
 import com.ambition.oj.judge.codesanbox.model.ExecuteCodeRequest;
 import com.ambition.oj.judge.codesanbox.model.ExecuteCodeResponse;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Ambition
  * @date 2023/12/4 22:25
  * 远程代码沙箱
  */
+//@Service
 public class RemoteCodeSandbox implements CodeSandbox {
 
     // 定义鉴权请求头和密钥

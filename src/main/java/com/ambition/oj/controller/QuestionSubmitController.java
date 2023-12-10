@@ -64,5 +64,23 @@ public class QuestionSubmitController {
     }
 
 
+    @PostMapping("/list")
+    public BaseResponse listQuestionSubmit(@RequestBody QuestionSubmitAddRequest questionSubmitAddRequest,
+                                           HttpServletRequest request) {
+//      判断当前用户是否登陆
+        User loginUser = userService.getLoginUser(request);
+//        获取当前的用户id
+        Long id = loginUser.getId();
+        questionSubmitAddRequest.setUserId(id);
+//        调用service层的方法
+        Integer result = questionSubmitService.addQuestionSubmit(questionSubmitAddRequest);
+        if (result == 0) {
+            return ResultUtils.error(ErrorCode.SYSTEM_ERROR, "提交失败");
+        } else {
+            return ResultUtils.success("提交成功");
+        }
+
+    }
+
 }
 

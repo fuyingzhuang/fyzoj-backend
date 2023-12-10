@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
  * @date 2023/12/4 23:21
  */
 
-@Service
+//@Service
 public class JudgeServiceImpl implements JudgeService {
 
     @Resource

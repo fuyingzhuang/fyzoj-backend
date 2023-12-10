@@ -6,7 +6,6 @@ import com.ambition.oj.common.DeleteRequest;
 import com.ambition.oj.common.ErrorCode;
 import com.ambition.oj.common.ResultUtils;
 import com.ambition.oj.model.dto.question.*;
-import com.ambition.oj.model.entity.Post;
 import com.ambition.oj.model.entity.Question;
 import com.ambition.oj.model.entity.User;
 import com.ambition.oj.model.vo.QuestionVO;
@@ -16,14 +15,12 @@ import com.ambition.oj.service.UserService;
 import com.ambition.oj.utils.GsonUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * <p>

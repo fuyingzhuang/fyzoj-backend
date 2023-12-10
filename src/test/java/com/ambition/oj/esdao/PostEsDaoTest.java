@@ -2,8 +2,6 @@ package com.ambition.oj.esdao;
 
 import com.ambition.oj.model.dto.post.PostEsDTO;
 import com.ambition.oj.model.dto.post.PostQueryRequest;
-import com.ambition.oj.model.entity.Post;
-import com.ambition.oj.service.PostService;
 
 import java.util.Arrays;
 import java.util.Date;

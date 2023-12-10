@@ -12,5 +12,4 @@ import java.util.List;
 @Data
 public class SearchVo implements Serializable {
     List<UserVO> userVOList;
-    List<PostVO> postVOList;
 }

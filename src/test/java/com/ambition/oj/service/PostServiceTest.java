@@ -2,7 +2,6 @@ package com.ambition.oj.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ambition.oj.model.dto.post.PostQueryRequest;
-import com.ambition.oj.model.entity.Post;
 
 import javax.annotation.Resource;
 

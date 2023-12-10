@@ -3,7 +3,6 @@ package com.ambition.oj.mapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ambition.oj.model.entity.Post;
 
 import javax.annotation.Resource;
 

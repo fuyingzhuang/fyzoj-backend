@@ -1,7 +1,5 @@
 package com.ambition.oj.mapper;
 
-import com.ambition.oj.model.entity.Post;
-
 import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;
